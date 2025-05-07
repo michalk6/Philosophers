@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:10:42 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/06 23:36:31 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/08 00:27:14 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ void	ft_print_philos(t_philo *philos)
 	{
 		printf("id: %d", philos->id);
 		printf(" - meals: %ld\n", philos->meals_left);
-		philos = philos->next;
+		if (philos->id < philos->next->id)
+			philos = philos->next;
+		else
+			philos = NULL;
 	}
 }
 
@@ -63,11 +66,11 @@ int	main(int argc, char **argv)
 	if (argc != 5 && argc != 6)
 		return (0);
 	table = ft_init_table(argc, argv);
-
+	if (table == NULL)
+		return (1);
 	printf("test\n");
 	ft_print_table(table);
 
-	if (table != NULL)
-		ft_free_table(table);
+	ft_free_table(table);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:36:48 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/07 21:56:39 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/08 00:23:00 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ static t_philo	*ft_create_philos(t_table *table)
 {
 	int		id;
 	t_philo	*philos;
+	t_philo *first;
 
 	philos = NULL;
 	id = 1;
@@ -82,7 +83,11 @@ static t_philo	*ft_create_philos(t_table *table)
 		ft_add_philo(&philos, id, table);
 		id++;
 	}
-	return (philos);
+	first = philos;
+	while (philos->next)
+		philos = philos->next;
+	philos->next = first;
+	return (first);
 }
 
 t_table	*ft_init_table(int argc, char **argv)
