@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:36:48 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/06 23:41:39 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/07 21:56:39 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static t_input_data	*ft_parse_input(int argc, char **argv)
 	if (argc == 6)
 	{
 		input->max_num_of_meals = ft_atol(argv[5]);
-		if (input->max_num_of_meals < 0)
+		if (input->max_num_of_meals <= 0)
 			return (free(input), printf("Arguments must be positive\n"), NULL);
 	}
 	else
