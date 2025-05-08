@@ -54,4 +54,4 @@ dkms.conf
 # own
 .vscode/
 test*
-philo
+philo/philo

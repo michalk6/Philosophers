@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:10:42 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/08 00:27:14 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/08 19:36:36 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	main(int argc, char **argv)
 	table = ft_init_table(argc, argv);
 	if (table == NULL)
 		return (1);
+	ft_begin_feast(table);
 	printf("test\n");
 	ft_print_table(table);
 
