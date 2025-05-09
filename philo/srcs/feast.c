@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 19:33:25 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/09 18:13:13 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/09 19:47:36 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	ft_delay(t_philo *philo)
 	if (philo->id % 2 == 0)
 	{
 		ft_think(philo);
-		usleep(1000);
+		usleep(50000);
 	}
 	if (philo->id % 2 != 0 && philo->next->id == 1)
 	{
 		ft_think(philo);
-		usleep(1000);
+		usleep(25000);
 	}
 }
 
