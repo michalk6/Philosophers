@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 19:07:39 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/09 18:16:26 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/09 18:17:53 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ typedef struct s_input_data
 typedef struct s_philo
 {
 	int				id;
-	// t_input_data	*input;
 	long			time_of_last_meal;
-	// long			meals_counter;
 	long			meals_left;
 	pthread_t		philo_thread;
 	pthread_mutex_t	fork;
@@ -45,7 +43,6 @@ typedef struct s_table
 {
 	long			start;
 	int				stop;
-	// pthread_mutex_t	stop_mutex;
 	t_input_data	*input;
 	t_philo			*philos;
 	pthread_t		life_monitor;
