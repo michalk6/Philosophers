@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 18:12:49 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/09 18:13:07 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/09 20:21:32 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void	ft_grab_forks(t_philo *philo)
 	pthread_mutex_lock(&(philo->fork));
 	time = ft_msgettime() - philo->table->start;
 	if (philo->table->stop == 0)
-		printf("%ld %d has taken a fork 1\n", time, philo->id);
+		printf("%ld %d has taken a fork (1st)\n", time, philo->id);
 	pthread_mutex_lock(&(philo->next->fork));
 	time = ft_msgettime() - philo->table->start;
 	if (philo->table->stop == 0)
-		printf("%ld %d has taken a fork 2\n", time, philo->id);
+		printf("%ld %d has taken a fork (2nd)\n", time, philo->id);
 }
 
 void	ft_eat(t_philo *philo)
