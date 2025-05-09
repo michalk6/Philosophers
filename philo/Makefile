@@ -8,6 +8,8 @@ SRCS	=	$(SRCDIR)/init_data \
 			$(SRCDIR)/philosophers \
 			$(SRCDIR)/utils \
 			$(SRCDIR)/free_data \
+			$(SRCDIR)/feast \
+			$(SRCDIR)/feast_philo_activities \
 
 CC 		= cc
 CFLAGS	= -Wall -Wextra -Werror -I $(INCDIR) -pthread

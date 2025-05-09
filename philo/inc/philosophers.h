@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 19:07:39 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/06 23:28:53 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/09 18:16:26 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef struct s_philo
 typedef struct s_table
 {
 	long			start;
+	int				stop;
+	// pthread_mutex_t	stop_mutex;
 	t_input_data	*input;
 	t_philo			*philos;
 	pthread_t		life_monitor;
@@ -51,6 +53,12 @@ typedef struct s_table
 
 t_table	*ft_init_table(int argc, char **argv);
 void	ft_free_table(t_table *table);
+void	ft_begin_feast(t_philo *philos);
+
+void	ft_grab_forks(t_philo *philo);
+void	ft_eat(t_philo *philo);
+void	ft_sleep(t_philo *philo);
+void	ft_think(t_philo *philo);
 
 // UTILS
 long	ft_atol(const char *nptr);

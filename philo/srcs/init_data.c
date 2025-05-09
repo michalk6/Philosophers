@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:36:48 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/08 00:23:00 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/09 18:02:28 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static void	ft_add_philo(t_philo **philos, int id, t_table *table)
 	to_add->meals_left = table->input->max_num_of_meals;
 	to_add->table = table;
 	to_add->next = NULL;
+	to_add->time_of_last_meal = 0;
 	pthread_mutex_init(&to_add->fork, NULL);
 	if (*philos == NULL)
 		*philos = to_add;
@@ -74,7 +75,7 @@ static t_philo	*ft_create_philos(t_table *table)
 {
 	int		id;
 	t_philo	*philos;
-	t_philo *first;
+	t_philo	*first;
 
 	philos = NULL;
 	id = 1;
@@ -98,6 +99,7 @@ t_table	*ft_init_table(int argc, char **argv)
 	if (table == NULL)
 		return (NULL);
 	table->start = ft_msgettime();
+	table->stop = 0;
 	table->input = ft_parse_input(argc, argv);
 	if (table->input == NULL)
 		return (free(table), NULL);
