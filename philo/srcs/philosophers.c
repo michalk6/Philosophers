@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 19:10:42 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/09 20:58:13 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/10 13:47:46 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 		return (ft_print_arg_error_message());
 	table = ft_init_table(argc, argv);
 	if (table == NULL)
-		return (1);
+		return (EXIT_FAILURE);
 	ft_begin_feast(table->philos);
 	ft_free_table(table);
 	return (EXIT_SUCCESS);
