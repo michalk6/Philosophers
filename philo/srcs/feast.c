@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 19:33:25 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/10 14:19:00 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/10 14:32:05 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	*ft_philo_existance(void *arg)
 	return (NULL);
 }
 
-void	*ft_monitor_life(void *arg)
+void	*ft_starvation_monitor(void *arg)
 {
 	t_philo	*philo;
 	long	time;
@@ -93,7 +93,7 @@ void	ft_begin_feast(t_philo *philos)
 			(void *)philos);
 		philos = philos->next;
 	}
-	pthread_create(&(first->table->life_monitor), NULL, ft_monitor_life,
+	pthread_create(&(first->table->life_monitor), NULL, ft_starvation_monitor,
 		(void *)first);
 	pthread_join(first->philo_thread, NULL);
 	philos = first->next;
