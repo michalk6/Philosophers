@@ -6,7 +6,7 @@
 /*   By: mikurek <mikurek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 18:12:49 by mikurek           #+#    #+#             */
-/*   Updated: 2025/05/09 20:21:32 by mikurek          ###   ########.fr       */
+/*   Updated: 2025/05/10 14:15:44 by mikurek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_eat(t_philo *philo)
 		}
 		else
 			printf("%ld %d is eating\n", time, philo->id);
-		philo->time_of_last_meal = ft_msgettime();
+		philo->time_of_last_meal = time;
 		usleep(philo->table->input->time_to_eat * 1000);
 	}
 	pthread_mutex_unlock(&(philo->fork));
